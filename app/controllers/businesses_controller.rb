@@ -13,6 +13,7 @@ class BusinessesController < ApplicationController
   end
 end
 
+
   # GET /businesses or /businesses.json
   def index
     @businesses = Business.all
