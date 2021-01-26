@@ -1,0 +1,48 @@
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'Yelp', root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+      <% if user_signed_in? %>
+
+
+      <li class="nav-item">
+        <%= link_to 'New Business', new_business_path, class: "nav-link" %>
+      </li>
+
+
+      <li class="nav-item">
+        <%= link_to "My account", edit_user_registration_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete  %>
+      </li>
+
+  <% else %>
+  <li class="nav-item">
+    <%= link_to "Sign up", new_user_registration_path, class: "nav-link"  %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Login", new_user_session_path, class: "nav-link"  %>
+  </li>
+
+  <% end %>
+
+
+    </ul>
+    <%= form_tag search_businesses_path, method: :get, class: "form-inline my-2 my-lg-0", role: "search" do%>
+    <p>
+      <%= text_field_tag :search, params[:search], class: "form-control"%>
+      <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+    </p>
+    <%end%>
+
+  </div>
+</nav>
+</div>
