@@ -11,6 +11,7 @@ class BusinessesController < ApplicationController
     else
       @businesses = Business.all
   end
+end
 
   # GET /businesses or /businesses.json
   def index
