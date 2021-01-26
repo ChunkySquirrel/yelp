@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= form_for [@business, @review] do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +13,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rating %>
-    <%= form.number_field :rating, min: 1, max: 5   %>
+    <%= form.number_field :rating, min: 1, max: 5, class: "form-control"    %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "form-control"  %>
   </div>
 
 
@@ -26,3 +28,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
