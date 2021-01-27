@@ -64,7 +64,7 @@ end
   def destroy
     @business.destroy
     respond_to do |format|
-      format.html { redirect_to businesses_url, notice: "Business was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Business was successfully destroyed." }
       format.json { head :no_content }
     end
   end
