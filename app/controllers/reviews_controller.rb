@@ -18,6 +18,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
+    @page_title = 'Write a review for ' + @business.name
+
     @review = Review.new
   end
 
@@ -78,6 +80,6 @@ class ReviewsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:rating, :comment, :image)
+      params.require(:review).permit(:rating, :comment, image: [:image_file_name, :image_file_size, :image_content_type, :image_updated_at])
     end
 end

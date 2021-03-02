@@ -5,7 +5,7 @@
 
   <h1>Newest businesses</h1>
 <div class="row">
-    <% @businesses.each do |business| %>
+    <% @businesses.order('created_at desc').first(20).each do |business| %>
     <div class="card" style="width: 18rem; margin:10px;">
       <%= image_tag business.image.url(:medium) %>
          <div class="card-body">
@@ -14,13 +14,15 @@
 
         <p class="card-text"><%= business.description %></p>
 
-        <%= link_to 'Open business', business, class: "btn btn-primary" %>
+        <%= link_to 'Read more', business, class: "btn btn-primary" %>
         <% if current_user == business.user %>
         <%= link_to 'Edit', edit_business_path(business) %>
         <%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
 </div>
+
+
 
     <% end %>
   </div>
