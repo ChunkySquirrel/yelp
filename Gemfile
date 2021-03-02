@@ -12,6 +12,7 @@ gem 'puma', '~> 4.1'
 gem 'searchkick'
 gem 'paperclip'
 gem 'jquery-rails'
+gem 'figaro'
 gem 'rmagick'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
