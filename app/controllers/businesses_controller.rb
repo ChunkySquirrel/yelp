@@ -21,19 +21,25 @@ end
 
   # GET /businesses/1 or /businesses/1.json
   def show
+      @page_title = @business.name + ' | Yelp'
   end
 
   # GET /businesses/new
   def new
+    @page_title = 'Create a new business | Yelp'
+
     @business = Business.new
   end
 
   # GET /businesses/1/edit
   def edit
+    @page_title = 'Edit | ' + @business.name
+
   end
 
   # POST /businesses or /businesses.json
   def create
+
     @business = Business.new(business_params)
     @business.user_id = current_user.id
     respond_to do |format|

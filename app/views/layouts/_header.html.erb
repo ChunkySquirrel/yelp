@@ -33,15 +33,16 @@
   </li>
 
   <% end %>
+</ul>
 
 
-    </ul>
     <%= form_tag search_businesses_path, method: :get, class: "form-inline my-2 my-lg-0", role: "search" do%>
     <p>
       <%= text_field_tag :search, params[:search], class: "form-control"%>
       <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
     </p>
     <%end%>
+
 
   </div>
 </nav>
