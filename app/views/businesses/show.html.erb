@@ -21,9 +21,9 @@
 </p>
 
 
-<%= link_to "Write a Review", new_business_review_path(@business) %>
+<%= link_to "Write a Review", new_business_review_path(@business) %> |
 <% if current_user == @business.user %>
-<%= link_to 'Edit', edit_business_path(@business) %> |
+<%= link_to 'Edit', edit_business_path(@business) %>
 <% end %>
 </div>
 
