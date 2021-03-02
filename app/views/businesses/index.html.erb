@@ -12,7 +12,7 @@
         <h5 class="card-title"><%= business.name %></h5>
         <p class="card-text">Average score: <b><%= business.reviews.average(:rating)%></b></p>
 
-        <p class="card-text"><%= business.description %></p>
+        <p class="card-text"><%= business.description.truncate(70) %></p>
 
         <%= link_to 'Read more', business, class: "btn btn-primary" %>
         <% if current_user == business.user %>
