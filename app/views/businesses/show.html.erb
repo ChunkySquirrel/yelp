@@ -47,6 +47,8 @@
     <%= image_tag review.image.url(:medium) %>
 
     <p><%= review.comment %></p>
+    <%= link_to 'Edit', edit_review_path(@review) %> |
+
   </div>
  <%end%>
  <%end%>

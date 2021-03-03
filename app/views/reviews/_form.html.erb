@@ -1,6 +1,6 @@
 <div class="container">
 
-<%= form_for [@business, @review], html: { multipart: true } do |form| %>
+<%= form_for [@business, @review], html: { multipart: true, "data-ajax" => false } do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
