@@ -47,7 +47,11 @@
     <%= image_tag review.image.url(:medium) %>
 
     <p><%= review.comment %></p>
-    <%= link_to 'Edit', edit_review_path(@review) %> |
+        <% if current_user == review.user %>
+    <%= link_to 'Edit', edit_business_review_path(@business, review) %> |
+    <%= link_to 'Delete', business_review_path(@business, review), method: :delete %> 
+
+        <% end %>
 
   </div>
  <%end%>
