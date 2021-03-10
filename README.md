@@ -1,24 +1,32 @@
-# README
+# Yelp 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- This project is a clone of the website "Yelp", which deals with writing reviews for different businesses. It is written in Ruby and runs on Rails 6.
 
-Things you may want to cover:
 
-* Ruby version
+## Features
+- Login, Registration, Facebook login
+- Creating, removing and editing a business
+- Creating, removing and editing a review
+- Image upload
+- Smart search
 
-* System dependencies
 
-* Configuration
+## Database schema
+[![Database schema](https://i.ibb.co/RYYHtQh/Screenshot-from-2021-03-10-08-36-41.png "Database schema")](https://i.ibb.co/RYYHtQh/Screenshot-from-2021-03-10-08-36-41.png "Database schema")
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+###Example code for calculating  and displaying number of stars to display
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+def blank_stars
+    5 - rating.to_i
+  end
 
-* Deployment instructions
+ <p>
+  <strong>Average rating:</strong>
+  <%= @business.reviews.average(:rating)%>
+</p>
+```
 
-* ...
+
