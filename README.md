@@ -16,7 +16,7 @@
 
 
 
-###Example code for calculating  and displaying number of stars to display
+## Example code for calculating  and displaying number of stars to display
 
 ```ruby
 def blank_stars
